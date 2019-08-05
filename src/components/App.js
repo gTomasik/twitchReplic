@@ -24,5 +24,5 @@ const App = () =>{
   )
 } 
 export default App
-//903507469191-8sji88e89jm8jp3rpg32lh7gah677v2v.apps.googleusercontent.com
+//
 //5OSeqavh5swalWHVbPefcy4V
