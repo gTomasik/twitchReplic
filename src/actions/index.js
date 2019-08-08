@@ -1,4 +1,5 @@
 import streams from '../apis/streams'
+import history from '../history'
 import { 
   SIGN_IN,
   SIGN_OUT, 
@@ -27,6 +28,7 @@ export const createStream = formValues =>  async (dispatch, getState) => {
   const response = await streams.post('/streams', {...formValues, userId});
 
   dispatch({ type: CREATE_STREAM, payload: response.data })
+  history.push('/')
 }
 
 export const fetchStreams = () => async dispatch => {
@@ -42,7 +44,7 @@ export const fetchStream = id => async dispatch => {
 }
 
 export const editStream = (id, formValues) => async dispatch => {
-  const response = await streams.put(`/streams:${id}`, formValues)
+  const response = await streams.put(`/streams/edit:${id}`, formValues)
 
   dispatch ({type: EDIT_STREAM, payload: response.data })
 }
